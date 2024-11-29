@@ -1,0 +1,862 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #ecf0f1;
+    --tercer-color: rgb(0, 153, 255);
+    --accent-color: #e74c3c;
+    --dark-color: #34495e;
+    --light-color: #bdc3c7;
+    --font-primary: 'Arial', sans-serif;
+}
+
+.bodymain {
+    font-family: var(--font-primary);
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 1em 2em;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .menu {
+    list-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.menu  li {
+    margin-right: 1.5em;
+    color: var(--primary-color);
+}
+
+.menu  li  a {
+    text-decoration: none;
+    color: var(--light-color);
+    font-family: var(--font-primary);
+    font-weight: bold;
+    padding: 0.5em 1em;
+    transition: color var(--transition-speed);
+}
+
+.menu  li a:hover {
+    color: var(--accent-color);
+}
+
+.opciones {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    z-index: 10;
+    list-style: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu li:hover .opciones {
+    display: block;
+}
+
+.opciones li a {
+    display: block;
+    text-decoration: none;
+    color: var(--light-color);
+    padding: 0.3em 0;
+    font-size: 0.9em;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+
+.lista {
+    display: flex;
+    gap: 1em;
+}
+
+.lista a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1em;
+    transition: color var(--transition-speed);
+}
+
+.lista a:hover {
+    color: var(--accent-color);
+}
+
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.video-container {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.parrafo {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--secondary-color);
+    padding: 1em 2em;
+    border-radius: 1em;
+    font-family: var(--font-primary);
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.botonbanner {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    font-family: var(--font-primary);
+    font-size: 1em;
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.botonbanner:hover {
+    background-color: #c0392b;
+}
+
+/* Section Styles */
+.seccion {
+    width: 100%;
+    padding: 2em 0;
+    background-color: var(--dark-color);
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.productes-destacats h2 {
+    font-family: var(--font-primary);
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+h2{
+    color: var(--secondary-color);
+}
+
+.titulos-ropa {
+    display: flex;
+    justify-content: center;
+    gap: 12em;
+    margin-bottom: 2em;
+}
+
+.titulos-ropa a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color var(--transition-speed);
+}
+
+.titulos-ropa a:hover {
+    color: var(--accent-color);
+}
+
+.widgets {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+
+.widget-01, .widget-02, .widget-03 {
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1em;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.widget-01 {
+    background-image: url('../img/products/samarreta1.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.widget-02 {
+    background-image: url('../img/products/pantalones1.webp');
+    background-position: center;
+    background-size: cover;
+}
+
+.widget-03 {
+    background-image: url('../img/products/sabates2.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+footer {
+    width: 100%;
+    padding: 2em;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    margin-top: 2em;
+}
+
+.titolXarxa {
+    font-size: 1.5em;
+    font-family: var(--font-primary);
+    margin-bottom: 1em;
+}
+
+#imatges {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin: 1em 0;
+}
+
+#imatges img {
+    width: 50px;
+    height: 50px;
+    transition: transform var(--transition-speed);
+}
+
+#imatges img:hover {
+    transform: scale(1.2);
+}
+
+.copy {
+    margin-top: 1em;
+    font-size: 0.9em;
+}
+
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--dark-color);
+    color: var(--primary-color);
+}
+
+.producto {
+    background-color: white;
+    padding: 30px;
+    height: 20em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+h3, h4 {
+    font-weight: bold;
+    color: var(--tercer-color);
+}
+
+h4 {
+    font-size: 1rem;
+    color: var(--accent-color);
+}
+
+div .producto p {
+    font-size: 0.9rem;
+    color: var(--tercer-color);
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 0.9rem;
+    color: var(--light-color);
+    margin-bottom: 15px;
+}
+
+.widget-1,
+.widget-2,
+.widget-3 {
+    display: flex;
+    text-align: start;
+    margin-bottom: 1em;
+}
+
+.widget-1 {
+    background-image: url(../img/products/samarreta1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.widget-2 {
+    background-image: url(../img/products/pantalones1.webp);
+    background-size: cover;
+    background-position: center;
+}
+.widget-3 {
+    background-image: url(../img/products/sabates1.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+#dessuadora-01 {
+    background-image: url(../img/products/Sudadera1.webp);
+    background-position: center;
+    background-size: cover;
+    padding: 2em;
+    width: 20em;
+    padding: 2em;
+    width: 20em;
+}
+
+#dessuadora-02 {
+    background-image: url(../img/products/Sudadera2.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 2em;
+    width: 20em;
+}
+
+#dessuadora-03 {
+    background-image: url(../img/products/sudadera3.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 2em;
+    width: 20em;
+}
+
+#samarreta-01 {
+    background-image: url(../img/products/samarreta1.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 2em;
+    width: 20em;
+}
+
+#samarreta-02 {
+    background-image: url(../img/products/samarreta2.webp);
+    background-position: center;
+    background-size: cover;
+    padding: 2em;
+    width: 20em;
+}
+
+#samarreta-03 {
+    background-image: url(../img/products/samarreta3.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 2em;
+    width: 20em;
+}
+
+#pantalons-01 {
+    background-image: url(../img/products/pantalones2.webp);
+    background-position: center;
+    background-size: cover;
+    padding: 2em;
+    width: 20em;
+}
+
+#pantalons-02 {
+    background-image: url(../img/products/pantalones1.webp);
+    background-position: center;
+    background-size: cover;
+    padding: 2em;
+    width: 20em;
+}
+
+#pantalons-03 {
+    background-image: url(../img/products/pantalones3.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 2em;
+    width: 20em;
+}
+
+#sabates-01 {
+    background-image: url(../img/products/sabates2.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 2em;
+    width: 20em;
+}
+
+#sabates-02 {
+    background-image: url(../img/products/sabates1.jpeg);
+    background-position: center;
+    background-size: cover;
+    padding: 2em;
+    width: 20em;
+}
+
+#sabates-03 {
+    background-image: url(../img/products/sabates4.webp);
+    background-position:center;
+    background-size: cover;
+    padding: 2em;
+    width: 20em;
+}
+
+.boton {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: var(--accent-color);
+}
+
+
+img {
+    margin-left: 20px;
+    width: 400px;
+    height: 400px;
+    object-fit: cover; 
+    border-radius: 8px; 
+}
+
+
+.sizes button {
+    margin-right: 10px; 
+    padding: 10px 20px;
+    background-color: #3498db; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.sizes button:hover {
+    background-color: #2980b9; 
+}
+
+.anadiralacesta, .paypal {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px; 
+    background-color: green;
+    color: white;
+    font-size: 16px; 
+    border: none; 
+    border-radius: 5px; 
+    text-align: center; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.container {
+    max-width: 50vw;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label{
+    color: var(--secondary-color);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea
+ {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.anadiralacesta:hover {
+    background-color: rgb(0, 60, 0);
+}
+
+.paypal {
+    background-color: darkcyan;
+}
+
+.paypal:hover {
+    background-color: darkblue; 
+}
+
+main {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+main div {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    width: calc(100% / 4 - 40px);
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    height: 250px; 
+    position: relative;
+}
+
+main div h4,
+main div h3,
+main div p {
+    margin: 5px 0; 
+}
+
+main div a .boton {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+main div a .boton:hover {
+    background-color: #555;
+}
+
+
+/*-----------------------------------------------------*/
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+}
+/* Mobile First --> Default columns */
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .col-sm-1 {
+        width: 8.33%;
+    }
+
+    .col-sm-2 {
+        width: 16.66%;
+    }
+
+    .col-sm-3 {
+        width: 25%;
+    }
+
+    .col-sm-4 {
+        width: 33.33%;
+    }
+
+    .col-sm-5 {
+        width: 41.66%;
+    }
+
+    .col-sm-6 {
+        width: 50%;
+    }
+
+    .col-sm-7 {
+        width: 58.33%;
+    }
+
+    .col-sm-8 {
+        width: 66.66%;
+    }
+
+    .col-sm-9 {
+        width: 75%;
+    }
+
+    .col-sm-10 {
+        width: 83.33%;
+    }
+
+    .col-sm-11 {
+        width: 91.66%;
+    }
+
+    .col-sm-12 {
+        width: 100%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .col-md-1 {
+        width: 8.33%;
+    }
+
+    .col-md-2 {
+        width: 16.66%;
+    }
+
+    .col-md-3 {
+        width: 25%;
+    }
+
+    .col-md-4 {
+        width: 33.33%;
+    }
+
+    .col-md-5 {
+        width: 41.66%;
+    }
+
+    .col-md-6 {
+        width: 50%;
+    }
+
+    .col-md-7 {
+        width: 58.33%;
+    }
+
+    .col-md-8 {
+        width: 66.66%;
+    }
+
+    .col-md-9 {
+        width: 75%;
+    }
+
+    .col-md-10 {
+        width: 83.33%;
+    }
+
+    .col-md-11 {
+        width: 91.66%;
+    }
+
+    .col-md-12 {
+        width: 100%;
+    }
+
+    #logo {
+        display: flex;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .col-lg-1 {
+        width: 8.33%;
+    }
+
+    .col-lg-2 {
+        width: 16.66%;
+    }
+
+    .col-lg-3 {
+        width: 25%;
+    }
+
+    .col-lg-4 {
+        width: 33.33%;
+    }
+
+    .col-lg-5 {
+        width: 41.66%;
+    }
+
+    .col-lg-6 {
+        width: 50%;
+    }
+
+    .col-lg-7 {
+        width: 58.33%;
+    }
+
+    .col-lg-8 {
+        width: 66.66%;
+    }
+
+    .col-lg-9 {
+        width: 75%;
+    }
+
+    .col-lg-10 {
+        width: 83.33%;
+    }
+
+    .col-lg-11 {
+        width: 91.66%;
+    }
+
+    .col-lg-12 {
+        width: 100%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .col-xl-1 {
+        width: 8.33%;
+    }
+
+    .col-xl-2 {
+        width: 16.66%;
+    }
+
+    .col-xl-3 {
+        width: 25%;
+    }
+
+    .col-xl-4 {
+        width: 33.33%;
+    }
+
+    .col-xl-5 {
+        width: 41.66%;
+    }
+
+    .col-xl-6 {
+        width: 50%;
+    }
+
+    .col-xl-7 {
+        width: 58.33%;
+    }
+
+    .col-xl-8 {
+        width: 66.66%;
+    }
+
+    .col-xl-9 {
+        width: 75%;
+    }
+
+    .col-xl-10 {
+        width: 83.33%;
+    }
+
+    .col-xl-11 {
+        width: 91.66%;
+    }
+
+    .col-xl-12 {
+        width: 100%;
+    }
+}
